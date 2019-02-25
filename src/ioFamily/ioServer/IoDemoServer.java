@@ -27,7 +27,7 @@ public class IoDemoServer extends Thread{
                     Socket socket = serverSocket.accept();
                     executor = Executors.newFixedThreadPool(8);//定义线程池
                     RequestHandler requestHandler = new RequestHandler(socket);
-                    requestHandler.start();
+                    executor.execute(requestHandler);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
