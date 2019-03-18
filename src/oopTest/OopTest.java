@@ -1,4 +1,4 @@
-package OopTest;
+package oopTest;
 
 import static java.lang.System.*;
 
