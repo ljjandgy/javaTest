@@ -1,5 +1,8 @@
 package oopTest;
 
+import java.util.Collections;
+import java.util.HashMap;
+
 /**
  * 子类
  */
