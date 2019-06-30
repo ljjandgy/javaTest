@@ -28,7 +28,22 @@ public class AppleFilter {
         bigGreenApple.forEach(apple -> {
             System.out.println("大绿苹果："+apple.getName());
         });
-
+        //匿名类实现方式
+        List<Apple> redAppleForAnonymousClass = appleFilter(originList, new ApplePredicate() {
+            @Override
+            public boolean appleTest(Apple apple) {
+                return "red".equals(apple.getColor());
+            }
+        });
+        //lambda表达式格式
+        List<Apple> redAppleForLambda = appleFilter(originList,(Apple aplle)->"red".equals(aplle.getColor()));
+        //list类型抽象化
+        List<Orange> orangeList = new ArrayList<>();
+        orangeList.add(new Orange("红心大橘子","yellow",180));
+        orangeList.add(new Orange("普通橘子","green",200));
+        orangeList.add(new Orange("超大橘子","yello",800));
+        //筛选大橘子
+        List<Orange> bigOrage = filter(orangeList,(Orange orage)->orage.getWeight()>500);
     }
 
     /**
@@ -44,5 +59,22 @@ public class AppleFilter {
             }
         }
         return redList;
+    }
+
+    /**
+     * 筛选各种类型的东西
+     * @param objectList 被筛选的集合
+     * @param predicate 筛选接口
+     * @param <T> 筛选对象的类型
+     * @return 筛选后的集合
+     */
+    private static <T>List<T> filter(List<T> objectList,Predicate<T> predicate){
+        List<T> resultList = new ArrayList<>();
+        for (T object:objectList){
+            if (predicate.test(object)){
+                resultList.add(object);
+            }
+        }
+        return resultList;
     }
 }
