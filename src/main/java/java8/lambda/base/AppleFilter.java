@@ -1,5 +1,6 @@
 package java8.lambda.base;
 
+import java8.lambda.base.example.Comparator;
 import java8.lambda.base.impl.ApplePredicateForColorAndHeavy;
 import java8.lambda.base.impl.ApplePredicateForRed;
 
@@ -44,6 +45,13 @@ public class AppleFilter {
         orangeList.add(new Orange("超大橘子","yello",800));
         //筛选大橘子
         List<Orange> bigOrage = filter(orangeList,(Orange orage)->orage.getWeight()>500);
+
+        Comparator comparator = new Comparator();
+        comparator.sortByAnonymousClass(originList);
+        originList.forEach(apple -> System.out.println(apple.getName()));
+        comparator.sortByLambda(originList);
+        originList.forEach(apple -> System.out.println(apple.getName()));
+
     }
 
     /**
