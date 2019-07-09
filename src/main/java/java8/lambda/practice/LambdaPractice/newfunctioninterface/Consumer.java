@@ -4,7 +4,7 @@ import java8.lambda.base.Apple;
 import java8.lambda.base.Orange;
 
 /**
- * 函数式接口Consumer的使用实例,该接口是用于访问并操作带个对象
+ * 函数式接口Consumer的使用实例,该接口是用于访问并操作单个对象
  */
 public class Consumer {
     public static void main(String[] arg){
