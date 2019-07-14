@@ -16,6 +16,10 @@ public class Apple {
         this.weight = weight;
     }
 
+    public Apple(){
+
+    }
+
 
     public String getName() {
         return name;
