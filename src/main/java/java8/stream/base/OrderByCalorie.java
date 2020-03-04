@@ -1,6 +1,5 @@
 package java8.stream.base;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

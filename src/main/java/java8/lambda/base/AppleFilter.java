@@ -51,7 +51,6 @@ public class AppleFilter {
         originList.forEach(apple -> System.out.println(apple.getName()));
         comparator.sortByLambda(originList);
         originList.forEach(apple -> System.out.println(apple.getName()));
-
     }
 
     /**
