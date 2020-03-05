@@ -1,6 +1,6 @@
 package array;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * @Author: LJJ

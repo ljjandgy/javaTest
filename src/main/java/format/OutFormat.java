@@ -1,6 +1,6 @@
 package format;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * @Author: LJJ
