@@ -25,5 +25,8 @@ public class NumberStream {
         System.out.println(count3);
         IntStream intStream = integerList.stream().mapToInt(i->i);
         Stream<Integer> integerStream = intStream.boxed();
+
+        IntStream rangeStream = IntStream.range(1,100);
+        System.out.println(rangeStream.count());
     }
 }
