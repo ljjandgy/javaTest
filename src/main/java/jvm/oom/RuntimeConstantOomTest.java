@@ -14,5 +14,5 @@ public class RuntimeConstantOomTest {
             //通过intern方法往常量池中添加String对象
             stringList.add(String.valueOf(i++).intern());
         }
-    }
+}
 }
