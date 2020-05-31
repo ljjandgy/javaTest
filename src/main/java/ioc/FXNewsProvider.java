@@ -1,14 +1,12 @@
 package ioc;
 
-import org.apache.commons.lang3.ArrayUtils;
-
 /**
  * 新闻提供类，通过从外部获取新闻信息，然后存入自己的数据库，类似于新闻同步
  */
-public class FXNewsProvider {
-    /** 新闻获取接口，通常由第三方提供 **/
+/*public class FXNewsProvider {
+    *//** 新闻获取接口，通常由第三方提供 **//*
     private IFXNewsListener newsListener;
-    /** 新闻存储接口 **/
+    *//** 新闻存储接口 **//*
     private IFXNewsPersister newPersistener;
     //不使用ioc时，需要自己去获取依赖对象
     public FXNewsProvider(){
@@ -38,4 +36,4 @@ public class FXNewsProvider {
             newPersistener.persistNews(newsBean);
             newsListener.postProcessIfNecessary(newsId);
         } }
-}
+}*/
