@@ -23,7 +23,7 @@ public class BubbleSorting {
     }
 
     private static void commonBubbleSorting(Integer[] testArray){
-        int temp = 0;
+        int temp;
         for (int i=0;i<testArray.length-1;++i){
             for (int j=0;j<testArray.length-1-i;++j){
                 if (testArray[j]>testArray[j+1]){
@@ -37,7 +37,7 @@ public class BubbleSorting {
 
     private static void optimizedBubbleSorting(Integer[] testArray){
         boolean flag = false;
-        int temp = 0;
+        int temp;
         for (int i=0;i<testArray.length-1;++i){
             //如果循环了一次，都没有发生交换，说明已经有序了，就不用继续排序了
             if (flag){
