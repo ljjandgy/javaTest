@@ -33,7 +33,6 @@ public class QuickSortingDemo {
                 int temp = testArray[j];
                 testArray[j] = testArray[i];
                 testArray[i] = temp;
-                System.out.println(Stream.of(testArray).map(String::valueOf).collect(Collectors.joining(",")));
             }
             //把基数换到pivot位置上
             int temp = testArray[i];
