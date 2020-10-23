@@ -12,7 +12,7 @@ import java.util.stream.Stream;
  */
 public class MergeSortingDemo {
     public static void main(String[] args) {
-        Integer[] testArray = {15,22,33,1,2,7,5,14,11,95,102,358,111,254,701,25,12,16};
+        Integer[] testArray = {15,22,33,1,2,7,5,14,11,95,102,358};
         Integer[] tempArray = new Integer[testArray.length];
         MergeSorting(testArray,tempArray,0,tempArray.length-1);
         System.out.println(Stream.of(testArray).map(String::valueOf).collect(Collectors.joining(",")));
