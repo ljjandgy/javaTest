@@ -10,7 +10,7 @@ package structure.algorithm;
 public class InterpolationSearchDemo {
     public static void main(String[] args) {
         Integer[] testArray = {1,2,5,7,11,14,15,22,33,95,102,358};
-        int targetIndex = interpolationSearch(testArray,102,0,testArray.length-1);
+        int targetIndex = interpolationSearch(testArray,100000,0,testArray.length-1);
         if (targetIndex==-1){
             System.out.println("目标在数组中不存在");
         }else{
@@ -20,7 +20,7 @@ public class InterpolationSearchDemo {
 
     private static int interpolationSearch(Integer[] testArray,int target,int l,int r){
         //计算“中值”的方式和二分查找不一样,插值查找是根据目标值所占的比例计算开始查找的位置
-        if (l<=r){
+        if (testArray[l]<testArray[r]&&target>testArray[l]&&target<testArray[r]){
             int mid = l+(r-l)*(target-testArray[l])/(testArray[r]-testArray[l]);
             if (target==testArray[mid]){
                 return mid;
@@ -29,6 +29,10 @@ public class InterpolationSearchDemo {
             }else{
                 return interpolationSearch(testArray,target,l,mid-1);
             }
+        }
+        //l==r时的判断
+        if (target==testArray[l]){
+            return l;
         }
         return -1;
     }

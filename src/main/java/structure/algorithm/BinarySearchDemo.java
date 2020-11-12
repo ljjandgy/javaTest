@@ -10,7 +10,7 @@ package structure.algorithm;
 public class BinarySearchDemo {
     public static void main(String[] args) {
         Integer[] testArray = {1,2,5,7,11,14,15,22,33,95,102,358};
-        int targetIndex = binarySearch(testArray,102,0,testArray.length-1);
+        int targetIndex = binarySearch(testArray,1000000,0,testArray.length-1);
         if (targetIndex==-1){
             System.out.println("目标在数组中不存在");
         }else{
