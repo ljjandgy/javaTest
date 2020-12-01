@@ -1,8 +1,11 @@
 package structure.binarytree;
 
 import static structure.binarytree.TraverseBinaryTreeUtil.inTraverseBinaryTree;
+import static structure.binarytree.TraverseBinaryTreeUtil.inTraverseSearch;
 import static structure.binarytree.TraverseBinaryTreeUtil.postTraverseBinaryTree;
+import static structure.binarytree.TraverseBinaryTreeUtil.postTraverseSearch;
 import static structure.binarytree.TraverseBinaryTreeUtil.preTraverseBinaryTree;
+import static structure.binarytree.TraverseBinaryTreeUtil.preTraverseSearch;
 
 /**
  * @author ljj
@@ -24,6 +27,18 @@ public class BinarySearchTreeDemo {
         //后序遍历
         System.out.println("\n后序遍历：");
         postTraverseBinaryTree(root);
+
+        System.out.println();
+        int target = 44;
+        //在二叉树中利用前序遍历查找对象
+        BinaryTreeNode preTargetNode = preTraverseSearch(root,target);
+        System.out.println(preTargetNode);
+        //在二叉树中利用中序遍历查找对象
+        BinaryTreeNode inTargetNode = inTraverseSearch(root,target);
+        System.out.println(inTargetNode);
+        //后序遍历查找对象
+        BinaryTreeNode postTargetNode = postTraverseSearch(root,target);
+        System.out.println(postTargetNode);
     }
 
     private static BinaryTreeNode getBinarySearchTree(int[] array){
@@ -55,4 +70,6 @@ public class BinarySearchTreeDemo {
             }
         }
     }
+
+
 }
