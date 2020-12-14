@@ -14,7 +14,7 @@ public class TraverseBinaryTreeUtil {
      * 先序遍历 根->左子树->右子树
      * @param node 树节点对象
      */
-    static void preTraverseBinaryTree(BinaryTreeNode node){
+    public static void preTraverseBinaryTree(BinaryTreeNode node){
         if (node!=null){
             System.out.print(node.getValue()+"->");
             //左节点
@@ -28,7 +28,7 @@ public class TraverseBinaryTreeUtil {
      * 中序遍历 左子树->根->右子树
      * @param node 树节点
      */
-    static void inTraverseBinaryTree(BinaryTreeNode node){
+    public static void inTraverseBinaryTree(BinaryTreeNode node){
         if (node!=null){
             //先遍历左子树，找到最左子树的左叶子节点
             inTraverseBinaryTree(node.getLeft());
@@ -43,12 +43,12 @@ public class TraverseBinaryTreeUtil {
      * 后序遍历 左子树->右子树->根
      * @param node 树节点
      */
-    static void postTraverseBinaryTree(BinaryTreeNode node){
+    public static void postTraverseBinaryTree(BinaryTreeNode node){
         if (node!=null){
             //先遍历左子树，找到最左子树的左叶子节点
-            inTraverseBinaryTree(node.getLeft());
+            postTraverseBinaryTree(node.getLeft());
             //遍历当前子树根节点的右子树
-            inTraverseBinaryTree(node.getRight());
+            postTraverseBinaryTree(node.getRight());
             //输出节点值
             System.out.print(node.getValue()+"->");
         }

@@ -1,9 +1,7 @@
 package structure.binarytree;
 
-import com.sun.istack.internal.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 /**
  * @author ljj
@@ -21,7 +19,7 @@ public class BinaryTreeNode {
 
     private int value;
 
-    BinaryTreeNode(int value){
+    public BinaryTreeNode(int value){
         this.value = value;
     }
 }
