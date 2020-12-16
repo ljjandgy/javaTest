@@ -26,7 +26,7 @@ public class ThreadBinaryTree {
         inThreadNode(this.root);
     }
     public void setPostThreadTree(){
-
+        postThreadNode(this.root);
     }
 
     /**
@@ -149,13 +149,15 @@ public class ThreadBinaryTree {
                     System.out.print(temp.getValue()+"->");
                     temp = (ThreadBinaryTreeNode)temp.getRight();
                 }
+                System.out.print(temp.getValue()+"->");
             }else{
                 postTraverse((ThreadBinaryTreeNode)node.getLeft());
                 //只有右节点为非线索节点时，才需要向下递归，否则都已经被左节点的线索节点遍历到了
                 if (node.getRight()!=null&&!((ThreadBinaryTreeNode)node.getRight()).isIfRightThread()){
                     postTraverse((ThreadBinaryTreeNode)node.getRight());
+                    //有有节点，并且右节点不为线索说明其不会因为线索而被遍历到，否则就会因为右线索被遍历到，就不用通过递归再去遍历它了
+                    System.out.print(node.getValue()+"->");
                 }
-                System.out.print(node.getValue()+"->");
             }
         }
         }
