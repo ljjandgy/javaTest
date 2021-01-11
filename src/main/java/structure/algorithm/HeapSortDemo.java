@@ -41,6 +41,18 @@ public class HeapSortDemo {
         System.out.println(Stream.of(testArray).map(String::valueOf).collect(Collectors.joining(",")));
     }
 
+    public static void heapSort(Integer[] array){
+        for (int i=array.length/2-1;i>=0;--i){
+            sift(array,i,array.length);
+        }
+        for (int i=array.length-1;i>0;--i){
+            int temp = array[0];
+            array[0] = array[i];
+            array[i] = temp;
+            sift(array,0,i);
+        }
+    }
+
     /*private static void sift(Integer[] testArray,int now){
         int parent =(now-1)/2;
         //当根节点小于子节点，就交互（因为要构造的是大顶堆）
