@@ -12,8 +12,8 @@ public class AVLTreeDemo {
         int[] leftRotateTestArray = {4,3,6,5,7,8};
         //当一个节点的右子树的高度比左子树高度大1时，就说明需要依靠右旋来构成AVL树
         BinaryTreeNode root = new BinaryTreeNode(leftRotateTestArray[0]);
-        for (int i:leftRotateTestArray){
-            putNode(root,i);
+        for (int i = 1;i<leftRotateTestArray.length;++i){
+            putNode(root,leftRotateTestArray[i]);
         }
         //前序遍历
         TraverseBinaryTreeUtil.preTraverseBinaryTree(root);
@@ -22,8 +22,8 @@ public class AVLTreeDemo {
         //右旋测试
         int[] rightRotateTestArray = {10,12,8,9,7,6};
         BinaryTreeNode root1 = new BinaryTreeNode(rightRotateTestArray[0]);
-        for (int i:rightRotateTestArray){
-            putNode(root1,i);
+        for (int i = 1;i<rightRotateTestArray.length;++i){
+            putNode(root1,rightRotateTestArray[i]);
         }
         //前序遍历
         TraverseBinaryTreeUtil.preTraverseBinaryTree(root1);
@@ -32,15 +32,15 @@ public class AVLTreeDemo {
         int[] allRotateTestArray1 = {10,11,7,6,8,9};
         int[] allRotateTestArray2 = {2,1,6,5,7,3};
         BinaryTreeNode root2 = new BinaryTreeNode(allRotateTestArray1[0]);
-        for (int i:allRotateTestArray1){
-            putNode(root2,i);
+        for (int i = 1;i<allRotateTestArray1.length;++i){
+            putNode(root2,allRotateTestArray1[i]);
         }
         //前序遍历
         TraverseBinaryTreeUtil.preTraverseBinaryTree(root2);
         System.out.println();
         BinaryTreeNode root3 = new BinaryTreeNode(allRotateTestArray2[0]);
-        for (int i:allRotateTestArray2){
-            putNode(root3,i);
+        for (int i = 1;i<allRotateTestArray2.length;++i){
+            putNode(root3,allRotateTestArray2[i]);
         }
         //前序遍历
         TraverseBinaryTreeUtil.preTraverseBinaryTree(root3);
@@ -75,7 +75,7 @@ public class AVLTreeDemo {
      * 4.把node节点的值替换为左子节点的值
      * 5.把node节点的左子树设置为node节点的左子树的左子树（删除node节点的左子节点，减少左子树高度）
      * 6.把node节点的右子节点设置为新建的节点
-     * @param node
+     * @param node 需要进行右旋的节点
      */
     public static void rightRotate(BinaryTreeNode node){
         BinaryTreeNode newNode = new BinaryTreeNode(node.getValue());

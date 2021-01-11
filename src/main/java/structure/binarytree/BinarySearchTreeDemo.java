@@ -43,7 +43,7 @@ public class BinarySearchTreeDemo {
         System.out.println(postTargetNode);
 
         //删除单子树节点
-        deleteNode(root,34);
+        deleteNode(root,55);
         //前序遍历新树
         preTraverseBinaryTree(root);
         System.out.println();
@@ -124,27 +124,20 @@ public class BinarySearchTreeDemo {
         if (parentNode==null){
             BinaryTreeNode minNode = getMinNode(targetNode);
             targetNode.setValue(minNode.getValue());
-            targetNode.setRight(minNode.getRight());
-            targetNode.setLeft(minNode.getLeft());
             return;
         }
         //删除叶子节点时，直接删除即可
         if (targetNode.getLeft()==null&&targetNode.getRight()==null){
-            if (parentNode.getLeft().getValue() == targetNode.getValue()){
+            if (parentNode.getLeft()!=null&&parentNode.getLeft().getValue() == targetNode.getValue()){
                 parentNode.setLeft(null);
             }else{
                 parentNode.setRight(null);
             }
         }else if (targetNode.getLeft()!=null&&targetNode.getRight()!=null){
-            //有两棵子树时,比较复杂。需要去目标节点的右子树中去寻找最小值来替代目标节点的位置
-            if (parentNode.getLeft().getValue() == targetNode.getValue()){
-                parentNode.setLeft(getMinNode(targetNode));
-            }else{
-                parentNode.setRight(getMinNode(targetNode));
-            }
+            targetNode.setValue(getMinNode(targetNode).getValue());
         }else{
             //有一棵子树时，只需要用目标节点的子节点去替代目标节点即可
-            if (parentNode.getLeft().getValue() == targetNode.getValue()){
+            if (parentNode.getLeft()!=null&&parentNode.getLeft().getValue() == targetNode.getValue()){
                 if (targetNode.getRight()!=null){
                     parentNode.setLeft(targetNode.getRight());
                 }else{
@@ -160,15 +153,16 @@ public class BinarySearchTreeDemo {
         }
     }
 
+    /**
+     * 获取右子树中最小节点，其实也就是获取右子树中最左子树，也就是不会有左子树的子树
+     * @param targetNode 需要删除的目标节点
+     * @return 右子树中的最小节点
+     */
     private static BinaryTreeNode getMinNode(BinaryTreeNode targetNode){
         BinaryTreeNode rightNode = targetNode.getRight();
-        BinaryTreeNode node = rightNode.getLeft();
-        if (node==null){
-            rightNode.setLeft(targetNode.getLeft());
-            return rightNode;
-        }
         //维护一个父指针，方便删除
-        BinaryTreeNode parent = rightNode;
+        BinaryTreeNode parent = targetNode;
+        BinaryTreeNode node = rightNode;
         while (node.getLeft()!=null){
             parent = node;
             node = node.getLeft();
