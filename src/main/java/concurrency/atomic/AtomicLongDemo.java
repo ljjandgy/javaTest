@@ -21,6 +21,7 @@ public class AtomicLongDemo {
 
         Thread.sleep(2000);
         System.out.println(counter.get());
+        service.shutdown();
     }
 
     static  class  Task  implements  Runnable  {
@@ -34,6 +35,7 @@ public class AtomicLongDemo {
         @Override
         public  void  run()  {
             counter.incrementAndGet();
+            System.out.println(Thread.currentThread().getName() + "：" + counter.get());
         }
     }
 }
