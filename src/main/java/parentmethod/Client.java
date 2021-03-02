@@ -12,8 +12,8 @@ import java.util.Map;
  */
 public class Client {
     public static void main(String[] args) {
-        Child parent = new Child();
-        Map<String, String> hashMap = new LinkedHashMap<>();
+        Parent parent = new Child();
+        HashMap<String, String> hashMap = new LinkedHashMap<>();
         hashMap.put("1", "str1");
         hashMap.put("2", "str3");
         parent.fun(hashMap);
