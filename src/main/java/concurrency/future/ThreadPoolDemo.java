@@ -19,9 +19,9 @@ public class ThreadPoolDemo {
 
  public static void main(String[] args) throws InterruptedException {
 
- ThreadPoolDemo threadPoolDemo = new ThreadPoolDemo();
+     ThreadPoolDemo threadPoolDemo = new ThreadPoolDemo();
 
- System.out.println(threadPoolDemo.getPrices());
+     System.out.println(threadPoolDemo.getPrices());
 
  }
 
@@ -36,7 +36,7 @@ public class ThreadPoolDemo {
  threadPool.submit(new Task(456, prices));
 
  threadPool.submit(new Task(789, prices));
-
+//模拟等待3s的同步，过了三秒就返回信息
  Thread.sleep(3000);
 
  return prices;
