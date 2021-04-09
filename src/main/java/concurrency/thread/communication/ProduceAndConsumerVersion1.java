@@ -53,7 +53,7 @@ public class ProduceAndConsumerVersion1 {
             for (int j = 0; j < 100000; j++) {
                 version1.produce();
             }
-        },"producer").start();
+        },"Producer").start();
         new Thread(()->{
             for (int k = 0; k < 100000; k++) {
                 version1.consume();
